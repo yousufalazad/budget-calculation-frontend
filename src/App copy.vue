@@ -6,4 +6,8 @@ import About from './views/Website/About.vue'
 
 <template>
   
+
 </template>
+
+<style scoped>
+</style>
