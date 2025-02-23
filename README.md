@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # budget-calculation-frontend
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -27,3 +28,6 @@ npm run dev
 ```sh
 npm run build
 ```
+=======
+# budget-calculation-frontend
+>>>>>>> 0f7a039967ce5d19c1c3170387de55c16fe0d92c
