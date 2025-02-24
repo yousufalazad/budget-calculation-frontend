@@ -15,7 +15,7 @@
 
         <!-- Main Content -->
         <main class="flex flex-grow items-center justify-center">
-            <h1 class="text-4xl font-bold text-gray-900">About Page</h1>
+            <h1 class="text-4xl font-bold text-gray-900">Support Page</h1>
         </main>
     </div>
 </template>
