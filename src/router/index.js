@@ -3,15 +3,23 @@ import Home from '@/views/Website/Home.vue'
 import About from '@/views/Website/About.vue'
 import Contact from '@/views/Website/Contact.vue'
 import Support from '@/views/Website/Support.vue'
+import WebsiteLayout from '@/views/Website/Layout/Layout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      component: WebsiteLayout,
+      children: [
+        {
+          path: '',
+          name: 'home',
+          component: Home,
+        }
+      ]
     },
+
     {
       path: '/about',
       name: 'about',

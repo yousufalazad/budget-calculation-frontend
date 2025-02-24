@@ -1,23 +1,35 @@
 <template>
-    <div class="h-screen flex flex-col">
-        <!-- Header Navigation -->
-        <header class="w-full bg-white shadow-md py-4 px-6 flex justify-between items-center">
-            <h1 class="text-2xl font-semibold text-gray-800">Budget Calculation</h1>
-            <nav class="space-x-4">
-                <RouterLink to="/" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">Home</RouterLink>
-
-                <RouterLink to="/about" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">About</RouterLink>
-                <RouterLink to="/contact" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">Contact</RouterLink>
-                <RouterLink to="/support" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">Support</RouterLink>
-
-            </nav>
-        </header>
-
-        <!-- Main Content -->
-        <main class="flex flex-grow items-center justify-center">
-            <h1 class="text-4xl font-bold text-gray-900">Contact Page</h1>
-        </main>
+    <div class="py-12">
+      <section class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-4xl font-bold text-gray-900">Contact Us</h1>
+        <p class="mt-4 text-lg text-gray-600">We'd love to hear from you. Reach out to us for any queries or feedback.</p>
+      </section>
+  
+      <!-- Contact Form -->
+      <section class="mt-8 max-w-6xl mx-auto px-6">
+        <form action="#" method="POST" class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+          <div class="mb-4">
+            <label for="name" class="block text-lg font-semibold text-gray-800">Name</label>
+            <input type="text" id="name" name="name" class="mt-2 w-full p-3 border border-gray-300 rounded-md" required />
+          </div>
+  
+          <div class="mb-4">
+            <label for="email" class="block text-lg font-semibold text-gray-800">Email</label>
+            <input type="email" id="email" name="email" class="mt-2 w-full p-3 border border-gray-300 rounded-md" required />
+          </div>
+  
+          <div class="mb-4">
+            <label for="message" class="block text-lg font-semibold text-gray-800">Message</label>
+            <textarea id="message" name="message" class="mt-2 w-full p-3 border border-gray-300 rounded-md" rows="4" required></textarea>
+          </div>
+  
+          <button type="submit" class="mt-6 w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all">
+            Send Message
+          </button>
+        </form>
+      </section>
     </div>
-</template>
-
-<script setup></script>
+  </template>
+  
+  <script setup></script>
+  

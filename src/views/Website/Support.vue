@@ -1,23 +1,24 @@
 <template>
-    <div class="h-screen flex flex-col">
-        <!-- Header Navigation -->
-        <header class="w-full bg-white shadow-md py-4 px-6 flex justify-between items-center">
-            <h1 class="text-2xl font-semibold text-gray-800">Budget Calculation</h1>
-            <nav class="space-x-4">
-                <RouterLink to="/" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">Home</RouterLink>
-
-                <RouterLink to="/about" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">About</RouterLink>
-                <RouterLink to="/contact" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">Contact</RouterLink>
-                <RouterLink to="/support" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">Support</RouterLink>
-
-            </nav>
-        </header>
-
-        <!-- Main Content -->
-        <main class="flex flex-grow items-center justify-center">
-            <h1 class="text-4xl font-bold text-gray-900">Support Page</h1>
-        </main>
+    <div class="py-12">
+      <!-- Support Section -->
+      <section class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-4xl font-bold text-gray-900">Support</h1>
+        <p class="mt-4 text-lg text-gray-600">Need help? Find answers to common questions below.</p>
+      </section>
+  
+      <!-- FAQ -->
+      <section class="mt-16 max-w-6xl mx-auto px-6">
+        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 mb-6">
+          <h3 class="text-xl font-semibold text-gray-800">How can I track my income and expenses?</h3>
+          <p class="text-gray-600 mt-2">You can easily add income and expenses via the dashboard, and they will be automatically categorized for you.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 mb-6">
+          <h3 class="text-xl font-semibold text-gray-800">How do I set recurring expenses?</h3>
+          <p class="text-gray-600 mt-2">Simply select the frequency (monthly, quarterly, etc.) when adding a new expense, and it will be added automatically each period.</p>
+        </div>
+      </section>
     </div>
-</template>
-
-<script setup></script>
+  </template>
+  
+  <script setup></script>
+  

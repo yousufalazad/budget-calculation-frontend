@@ -1,23 +1,24 @@
 <template>
-    <div class="h-screen flex flex-col">
-        <!-- Header Navigation -->
-        <header class="w-full bg-white shadow-md py-4 px-6 flex justify-between items-center">
-            <h1 class="text-2xl font-semibold text-gray-800">Budget Calculation</h1>
-            <nav class="space-x-4">
-                <RouterLink to="/" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">Home</RouterLink>
-
-                <RouterLink to="/about" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">About</RouterLink>
-                <RouterLink to="/contact" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">Contact</RouterLink>
-                <RouterLink to="/support" class="px-4 py-2 text-gray-700 hover:text-green-600 transition">Support</RouterLink>
-
-            </nav>
-        </header>
-
-        <!-- Main Content -->
-        <main class="flex flex-grow items-center justify-center">
-            <h1 class="text-4xl font-bold text-gray-900">About Page</h1>
-        </main>
+    <div class="py-12">
+      <!-- About Section -->
+      <section class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-4xl font-bold text-gray-900">About Us</h1>
+        <p class="mt-4 text-lg text-gray-600">We are dedicated to making financial planning simple and accessible to everyone.</p>
+      </section>
+  
+      <!-- Mission & Vision -->
+      <section class="mt-16 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+          <h3 class="text-xl font-semibold text-gray-800">Our Mission</h3>
+          <p class="text-gray-600 mt-4">To empower individuals and businesses to manage their budgets effectively and efficiently.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 text-center">
+          <h3 class="text-xl font-semibold text-gray-800">Our Vision</h3>
+          <p class="text-gray-600 mt-4">To be the leading platform that simplifies financial tracking, helping users build better financial habits.</p>
+        </div>
+      </section>
     </div>
-</template>
-
-<script setup></script>
+  </template>
+  
+  <script setup></script>
+  

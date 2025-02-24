@@ -1,21 +1,18 @@
-<script setup>
-import Header from './Header.vue';
-import Footer from './Footer.vue';
-</script>
 <template>
-    <h2>Layout Page</h2>
+    <div class="h-screen flex flex-col">
+        <Header />
 
-    <div>
-        <Header></Header>
-    </div>
+        <main class="flex-grow bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4">
+                <RouterView />
+            </div>
+        </main>
 
-    <div>
-        <h2>Content area</h2>
+        <Footer />
     </div>
-
-    <div>
-        <Footer></Footer>
-    </div>
-    
 </template>
 
+<script setup>
+import Header from '@/views/Website/Layout/Header.vue';
+import Footer from '@/views/Website/Layout/Footer.vue';
+</script>
