@@ -53,9 +53,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-import { authStore } from '../../store/authStore.js';
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+import { authStore } from '@/auth/store/authStore.js';
 const auth = authStore
 
 const name = ref("");
@@ -75,13 +76,19 @@ const handleRegister = async () => {
     passwordMismatch.value = false;
   }
 
+  // Simulated registration (replace with API call)
   if (email.value && password.value) {
 
-      auth.fetchPublicApi("/api/register",{ name: name, email: email, password: password },"POST")
+    register(name, type, email, password) {
+      auth.fetchPublicApi(
+          "/api/register",
+          { name: name, type: type, email: email, password: password },
+          "POST"
+        )
         .then((res) => {
           if (res.status) {
-            auth.errors = null;
-            // router.push({ name: "login" });
+            authStore.errors = null;
+            router.push({ name: "login" });
             Swal.fire({
               icon: "success",
               title: "Registration successful",
@@ -91,10 +98,14 @@ const handleRegister = async () => {
               showConfirmButton: false,
             });
           } else {
-            auth.errors = res.errors;
+            authStore.errors = res.errors;
           }
         });
-    router.push({ name: "login"}); // Redirect after registration
+    },
+
+
+
+    router.push("/dashboard"); // Redirect after registration
   } else {
     errorMessage.value = "Registration failed. Please try again.";
   }
