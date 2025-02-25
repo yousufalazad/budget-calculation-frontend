@@ -1,6 +1,6 @@
 <template>
     <div class="h-screen flex flex-col">
-        <Header />
+        <Header></Header>
 
         <main class="flex-grow bg-gray-100">
             <div class="max-w-7xl mx-auto px-4">
@@ -8,7 +8,7 @@
             </div>
         </main>
 
-        <Footer />
+        <Footer></Footer>
     </div>
 </template>
 

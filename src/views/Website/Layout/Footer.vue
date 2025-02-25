@@ -14,7 +14,7 @@
                 <h2 class="text-lg font-semibold mb-3">Company</h2>
                 <ul class="space-y-2">
                     <li><RouterLink to="/about" class="text-gray-400 hover:text-white transition">About Us</RouterLink></li>
-                    <li><RouterLink to="/services" class="text-gray-400 hover:text-white transition">Our Services</RouterLink></li>
+                    <li><RouterLink to="" class="text-gray-400 hover:text-white transition">Our Services</RouterLink></li>
                     <li><RouterLink to="/blog" class="text-gray-400 hover:text-white transition">Blog</RouterLink></li>
                 </ul>
             </div>
@@ -24,8 +24,8 @@
                 <h2 class="text-lg font-semibold mb-3">Support</h2>
                 <ul class="space-y-2">
                     <li><RouterLink to="/contact" class="text-gray-400 hover:text-white transition">Contact Us</RouterLink></li>
-                    <li><RouterLink to="/faq" class="text-gray-400 hover:text-white transition">FAQs</RouterLink></li>
-                    <li><RouterLink to="/help" class="text-gray-400 hover:text-white transition">Help Center</RouterLink></li>
+                    <li><RouterLink to="" class="text-gray-400 hover:text-white transition">FAQs</RouterLink></li>
+                    <li><RouterLink to="" class="text-gray-400 hover:text-white transition">Help Center</RouterLink></li>
                 </ul>
             </div>
 

@@ -55,7 +55,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { authStore } from '../../store/authStore.js';
+import { authStore } from '../../store/authStore';
 const auth = authStore
 
 const name = ref("");

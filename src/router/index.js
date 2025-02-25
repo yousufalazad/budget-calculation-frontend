@@ -7,6 +7,7 @@ import WebsiteLayout from "@/views/Website/Layout/Layout.vue";
 import Blog from "@/views/Website/Blog.vue";
 import Login from "@/views/Auth/Login.vue";
 import Register from "@/views/Auth/Register.vue";
+import ForgotPassword from "@/views/Auth/ForgotPassword.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -49,6 +50,11 @@ const router = createRouter({
           path: "/register",
           name: "register",
           component: Register,
+        },
+        {
+          path: "/forgot-password",
+          name: "forgot-password",
+          component: ForgotPassword,
         },
       ],
     },
