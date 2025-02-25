@@ -1,88 +1,18 @@
 <template>
-    <header class="w-full bg-white shadow-md py-4 px-6 md:px-10 flex justify-between items-center">
-      <!-- Logo -->
-      <RouterLink to="/">
-        <img src="../../../assets/images/Budget-Calculation-Logo.png" alt="Budget Calculation Logo" class="w-20">
-      </RouterLink>
-  
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex space-x-4">
-        <RouterLink to="/" class="nav-link">Home</RouterLink>
-        <RouterLink to="/about" class="nav-link">About</RouterLink>
-        <RouterLink to="/contact" class="nav-link">Contact</RouterLink>
-        <RouterLink to="/support" class="nav-link">Support</RouterLink>
-        <RouterLink to="/blog" class="nav-link">Blog</RouterLink>
-        <RouterLink v-if="!isAuthenticated" to="/login" class="nav-link">Login</RouterLink>
-        <button v-else @click="logout" class="nav-link text-red-500">Logout</button>
+  <div class="h-screen flex flex-col">
+    <!-- Header Navigation -->
+    <header class="w-full bg-white shadow-md py-4 px-10 flex justify-between items-center">
+      <img src="../../../assets/images/Budget-Calculation-Logo.png" alt="Budget Calculation Logo" class="w-20">
+      <nav class="space-x-2">
+        <RouterLink to="/" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-semibold transition">Home</RouterLink>
+        <RouterLink to="/about" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-semibold transition">About</RouterLink>
+        <RouterLink to="/contact" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-semibold transition">Contact</RouterLink>
+        <RouterLink to="/support" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-semibold transition">Support</RouterLink>
+        <RouterLink to="/Blog" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-semibold transition">Blog</RouterLink>
+        <RouterLink to="/login" class="px-4 py-2 text-gray-700 hover:text-blue-600 font-semibold transition">Login</RouterLink>
       </nav>
-  
-      <!-- Mobile Menu Button -->
-      <button @click="toggleMenu" class="md:hidden text-gray-700 focus:outline-none">
-        <svg v-if="!isMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-        <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-  
-      <!-- Mobile Navigation (Dropdown) -->
-      <div v-if="isMenuOpen" class="absolute top-16 left-0 w-full bg-white shadow-md md:hidden flex flex-col items-center py-4 space-y-2">
-        <RouterLink @click="toggleMenu" to="/" class="mobile-nav-link">Home</RouterLink>
-        <RouterLink @click="toggleMenu" to="/about" class="mobile-nav-link">About</RouterLink>
-        <RouterLink @click="toggleMenu" to="/contact" class="mobile-nav-link">Contact</RouterLink>
-        <RouterLink @click="toggleMenu" to="/support" class="mobile-nav-link">Support</RouterLink>
-        <RouterLink @click="toggleMenu" to="/blog" class="mobile-nav-link">Blog</RouterLink>
-        <RouterLink v-if="!isAuthenticated" @click="toggleMenu" to="/login" class="mobile-nav-link">Login</RouterLink>
-        <button v-else @click="logout" class="mobile-nav-link text-red-500">Logout</button>
-      </div>
     </header>
-  </template>
-  
-  <script setup>
-  import { ref, computed, onMounted } from 'vue';
-  import { useRouter } from 'vue-router';
-  import axios from 'axios';
-  
-  // State variables
-  const isMenuOpen = ref(false);
-  const router = useRouter();
-  
-  // Check if user is authenticated
-  const isAuthenticated = computed(() => !!localStorage.getItem('auth_token'));
-  
-  // Function to toggle mobile menu
-  const toggleMenu = () => {
-    isMenuOpen.value = !isMenuOpen.value;
-  };
-  
-  // Logout function
-  const logout = async () => {
-    try {
-      const token = localStorage.getItem('auth_token');
-  
-      if (token) {
-        await axios.post('/api/logout', {}, { headers: { Authorization: `Bearer ${token}` } });
-      }
-  
-      // Clear auth token from storage
-      localStorage.removeItem('auth_token');
-  
-      // Redirect to login page
-      router.push('/login');
-    } catch (error) {
-      console.error('Logout failed:', error);
-    }
-  };
-  </script>
-  
-  <style scoped>
-  /* .nav-link {
-    @apply px-4 py-2 text-gray-700 hover:text-green-600 transition;
-  } */
-  
-  /* .mobile-nav-link {
-    @apply w-full text-center py-2 text-gray-700 hover:text-green-600 transition;
-  } */
-  </style>
-  
+  </div>
+</template>
+
+<script setup></script>

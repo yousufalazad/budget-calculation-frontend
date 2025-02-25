@@ -112,70 +112,7 @@ const authStore = reactive({
     return res.data;
   },
 
-  async authenticate(username, password, remember_token) {
-    try {
-      const response = await authStore.fetchPublicApi(
-        "/api/login",
-        { email: username, password: password, remember_token: remember_token },
-        "POST"
-      );
 
-      if (response.status === "success") {
-        authStore.isAuthenticated = true;
-        authStore.user = response.data;
-        sessionStorage.setItem("auth", 1);
-        sessionStorage.setItem("user", JSON.stringify(response.data));
-
-        // Check session storage
-        console.log(sessionStorage.getItem("auth")); // Should return 1
-        console.log(sessionStorage.getItem("user")); // Should return user data
-
-        // Redirect based on user type
-        switch (response.data.type) {
-          case "individual":
-            router.push({ name: "individual-dashboard-initial-content" });
-            break;
-          case "organisation":
-            router.push({ name: "dashboard-initial-content" });
-            break;
-          case "superadmin":
-            //this.superAdminUserData(response.data.id); no needed
-            router.push({ name: "initial-content" });
-            break;
-          default:
-            router.push({ name: "login" });
-        }
-
-        console.log(authStore.isAuthenticated); // Should be true after login
-        console.log(authStore.user); // Should return user data after login
-        console.log(authStore.getUserToken()); // Should return the token if the user is logged in
-        console.log(response.data.type); // Check which user type is being returned
-
-        Swal.fire({
-          icon: "success",
-          title: "Login Successful",
-          text: "You have successfully logged in.",
-          timer: 1000,
-          timerProgressBar: true,
-          showConfirmButton: false,
-        });
-      } else {
-        authStore.errors = response.errors || "An error occurred during login.";
-        Swal.fire({
-          icon: "error",
-          title: "Login failed",
-          text: response.message || "Invalid login credentials",
-        });
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      Swal.fire({
-        icon: "error",
-        title: "Login error",
-        text: "An unexpected error occurred. Please try again.",
-      });
-    }
-  },
 
   logout() {
     Swal.fire({

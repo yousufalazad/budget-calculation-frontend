@@ -57,9 +57,11 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { authStore } from '../../store/authStore';
 const auth = authStore
+import Swal from 'sweetalert2';
 
 const name = ref("");
 const email = ref("");
+const type = 'individual';
 const password = ref("");
 const confirmPassword = ref("");
 const errorMessage = ref("");
@@ -76,27 +78,36 @@ const handleRegister = async () => {
   }
 
   if (email.value && password.value) {
+    const data = {
+      name: name.value,
+      type: type,
+      email: email.value,
+      password: password.value
+    };
 
-      auth.fetchPublicApi("/api/register",{ name: name, email: email, password: password },"POST")
-        .then((res) => {
-          if (res.status) {
-            auth.errors = null;
-            // router.push({ name: "login" });
-            Swal.fire({
-              icon: "success",
-              title: "Registration successful",
-              text: "You have successfully registered.",
-              timer: 1000,
-              timerProgressBar: true,
-              showConfirmButton: false,
-            });
-          } else {
-            auth.errors = res.errors;
-          }
-        });
-    router.push({ name: "login"}); // Redirect after registration
+    auth.fetchPublicApi("/api/register", data, "POST")
+      .then((res) => {
+        if (res.status) {
+          auth.errors = null;
+          Swal.fire({
+            icon: "success",
+            title: "Registration successful",
+            text: "You have successfully registered.",
+            timer: 1000,
+            timerProgressBar: true,
+            showConfirmButton: false,
+          });
+          router.push("/login");
+        } else {
+          auth.errors = res.errors;
+        }
+      })
+      .catch((error) => {
+        console.error("Error during registration:", error);
+      });
   } else {
     errorMessage.value = "Registration failed. Please try again.";
   }
 };
+
 </script>

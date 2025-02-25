@@ -1,6 +1,6 @@
 <template>
     <footer class="w-full bg-gray-900 text-white py-10 px-10">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Footer Column 1: Logo & Description -->
             <div>
                 <img src="../../../assets/images/Budget-Calculation-Logo.png" alt="Budget Calculation Logo" class="w-20 mb-4">
