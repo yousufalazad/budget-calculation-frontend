@@ -49,10 +49,22 @@ const isSectionOpen = (section) => openSections.value.includes(section);
               </svg>
             </button>
             <div v-if="isSectionOpen('income') && isSidebarExpanded" class="space-y-1">
-              <router-link to="/org-dashboard/org-report"
-                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">Income</router-link>
-              <router-link to="/org-dashboard/org-expense-report"
-                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">Expense</router-link>
+              <router-link to="/org-dashboard/my-account/expense"
+                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">One time</router-link>
+              <router-link to="/org-dashboard/fundamental-info"
+                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">Monthly</router-link>
+              <router-link to="/org-dashboard/founders"
+                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">Founders</router-link>
+              <router-link to="/org-dashboard/strategic-plan"
+                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">Quarterly</router-link>
+              <router-link to="/org-dashboard/recognition"
+                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">Half yearly</router-link>
+              <router-link to="/org-dashboard/success-story"
+                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">Yearly</router-link>
+              <router-link to="/org-dashboard/history"
+                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">Bi-weekly</router-link>
+              <router-link to="/org-dashboard/year-plan"
+                class="block px-4 ml-2 text-gray-500 py-2 hover:bg-gray-100">Fortnightly</router-link>
 
             </div>
           </div>
