@@ -8,12 +8,28 @@ import Blog from "@/views/Website/Blog.vue";
 import Login from "@/views/Auth/Login.vue";
 import Register from "@/views/Auth/Register.vue";
 import ForgotPassword from "@/views/Auth/ForgotPassword.vue"
+import ClientDashboardLayout from "@/views/ClientDashboard/Layout/Layout.vue";
+import ClientDashboardIndex from "@/views/ClientDashboard/index.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: "/dashboard",
+      name: "dashboard",
+      component: ClientDashboardLayout,
+      children: [
+        {
+          path: "index",
+          name: "index",
+          component: ClientDashboardIndex,
+        },
+      
+      ],
+    },
+    {
       path: "/",
+      name: "website-home",
       component: WebsiteLayout,
       children: [
         {
