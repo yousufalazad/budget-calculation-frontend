@@ -18,17 +18,18 @@ const toggleSection = (section) => {
 
 const isSectionOpen = (section) => openSections.value.includes(section);
 </script>
+
 <template>
         <nav class="flex-1 px-2 py-4 space-y-2">
 
           <!-- Static Links -->
-          <router-link to="/org-dashboard/dashboard-initial-content"
+          <router-link :to="{ name: 'index' }"
             class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md">
             <span v-if="isSidebarExpanded">Home</span>
             <span v-else class="hidden">Home</span>
           </router-link>
 
-          <router-link to="/org-dashboard/member-list"
+          <router-link :to="{ name: 'transaction' }"
             class="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md">
             <span v-if="isSidebarExpanded">Transaction</span>
             <span v-else class="hidden">Transaction</span>

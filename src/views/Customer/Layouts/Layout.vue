@@ -6,9 +6,9 @@ import MainContent from './MainContent.vue';
 
 <template>
     <div class="h-screen flex flex-col">
-        <Header></Header>
-        <MainContent></MainContent>
-        <Footer></Footer>
+        <Header />
+        <main-content />
+        <Footer />
     </div>
 </template>
 

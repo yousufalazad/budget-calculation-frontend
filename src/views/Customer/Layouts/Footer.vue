@@ -1,3 +1,7 @@
+
+<script setup>
+</script>
+
 <template>
     <footer class="w-full bg-gray-900 text-white py-10 px-10">
         <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -47,5 +51,3 @@
     </footer>
 </template>
 
-<script setup>
-</script>

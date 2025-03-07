@@ -3,13 +3,14 @@ import Home from "@/views/Website/Home.vue";
 import About from "@/views/Website/About.vue";
 import Contact from "@/views/Website/Contact.vue";
 import Support from "@/views/Website/Support.vue";
-import WebsiteLayout from "@/views/Website/Layout/Layout.vue";
+import WebsiteLayout from "@/views/Website/Layouts/Layout.vue";
 import Blog from "@/views/Website/Blog.vue";
 import Login from "@/views/Auth/Login.vue";
 import Register from "@/views/Auth/Register.vue";
 import ForgotPassword from "@/views/Auth/ForgotPassword.vue"
-import ClientDashboardLayout from "@/views/ClientDashboard/Layout/Layout.vue";
-import ClientDashboardIndex from "@/views/ClientDashboard/index.vue";
+import CustomerDashboardLayout from "@/views/Customer/Layouts/Layout.vue";
+import CustomerDashboardIndex from "@/views/Customer/Layouts/Dashboard/Index.vue";
+import Transaction from "@/views/Customer/Transaction.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,12 +18,17 @@ const router = createRouter({
     {
       path: "/dashboard",
       name: "dashboard",
-      component: ClientDashboardLayout,
+      component: CustomerDashboardLayout,
       children: [
         {
           path: "index",
           name: "index",
-          component: ClientDashboardIndex,
+          component: CustomerDashboardIndex,
+        },
+        {
+          path: "transaction",
+          name: "transaction",
+          component: Transaction,
         },
       
       ],
