@@ -114,45 +114,45 @@ const authStore = reactive({
 
 
 
-  logout() {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You will be logged out.",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Yes, log out!",
-      cancelButtonText: "Cancel",
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        try {
-          await authStore.fetchProtectedApi("/api/logout", {}, "POST");
+  // logout() {
+  //   Swal.fire({
+  //     title: "Are you sure?",
+  //     text: "You will be logged out.",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonText: "Yes, log out!",
+  //     cancelButtonText: "Cancel",
+  //   }).then(async (result) => {
+  //     if (result.isConfirmed) {
+  //       try {
+  //         await authStore.fetchProtectedApi("/api/logout", {}, "POST");
 
-          // Clear frontend authentication status
-          authStore.isAuthenticated = false;
-          authStore.user = {};
-          sessionStorage.setItem("auth", 0);
-          sessionStorage.setItem("user", "{}");
-          router.push({ name: "login" });
+  //         // Clear frontend authentication status
+  //         authStore.isAuthenticated = false;
+  //         authStore.user = {};
+  //         sessionStorage.setItem("auth", 0);
+  //         sessionStorage.setItem("user", "{}");
+  //         router.push({ name: "login" });
 
-          Swal.fire({
-            icon: "success",
-            title: "Logged Out",
-            text: "You have been logged out successfully.",
-            timer: 1000,
-            timerProgressBar: true,
-            showConfirmButton: false,
-          });
-        } catch (error) {
-          console.error("Logout failed:", error);
-          Swal.fire({
-            icon: "error",
-            title: "Logout Failed",
-            text: "There was an issue logging out. Please try again.",
-          });
-        }
-      }
-    });
-  },
+  //         Swal.fire({
+  //           icon: "success",
+  //           title: "Logged Out",
+  //           text: "You have been logged out successfully.",
+  //           timer: 1000,
+  //           timerProgressBar: true,
+  //           showConfirmButton: false,
+  //         });
+  //       } catch (error) {
+  //         console.error("Logout failed:", error);
+  //         Swal.fire({
+  //           icon: "error",
+  //           title: "Logout Failed",
+  //           text: "There was an issue logging out. Please try again.",
+  //         });
+  //       }
+  //     }
+  //   });
+  // },
 
   getUserToken() {
     return authStore.user?.accessToken;
